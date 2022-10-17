@@ -76,7 +76,7 @@ export default function Game() {
         <div className="bg-white/95 rounded-lg mb-6 drop-shadow-2xl" style={{width: '200px', height: '150px'}}>
           <img onDragStart={(e) => e.preventDefault()} width="150px" height="auto" className="w-100 brightness-0 object-cover mx-auto my-auto" src={currentPokemon.img?.src} alt="pokemon image" />
         </div>
-        <div className="grid grid-rows-2 grid-cols-2 gap-x-10 gap-y-2 md:mb-0 mb-[4rem]">
+        <div className="grid grid-rows-2 grid-cols-2 gap-x-10 gap-y-2">
           {currentPokemon && currentPokemon.other?.map(poke => 
               <button onClick={(e) => handleClick(e, poke)} key={poke} className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-lg px-8 py-3 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700">{poke}</button>)}
         </div>
