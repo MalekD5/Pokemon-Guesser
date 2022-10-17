@@ -45,9 +45,10 @@ export default function Game() {
     
     setAnswered(true);
     const target = e.target as HTMLButtonElement;
-    target.addEventListener('mouseover', (e) => {
+    function a(e: Event) {
         e.preventDefault();
-    });
+    };
+    target.addEventListener('mouseover', (e) => a(e));
     
     if (name === currentPokemon?.name) {
       target.style.backgroundColor = '#22c55e';
@@ -58,6 +59,8 @@ export default function Game() {
     }
     setScore({...score});
     setTimeout(() => {
+      target.style.backgroundColor = '#1d4ed8';
+      target.removeEventListener('mouseover', a, false);
       setCurrentPokemon(randomize());
       setAnswered(false);
     }, 200);
